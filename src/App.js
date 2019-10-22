@@ -1,13 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-
 import './App.css';
 import ButtonAppBar from './components/TopBar';
-import DatePicker from './components/DatePicker';
-import InputWithIcon from './components/SearchInput';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from "react-router-dom";
+import Home from './components/Home';
 import SimpleCard from './components/Card';
-import { Box } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -34,21 +35,16 @@ function App() {
         <ButtonAppBar></ButtonAppBar>
       </header>
 
-      <Grid container spacing={3} className={classes.m2}>
-        <Grid item xs={12} md={6}>
-          <Box>
-            <DatePicker className={classes.datePickerFilter}></DatePicker>
-          </Box>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Box>
-            <InputWithIcon></InputWithIcon>
-          </Box>
-        </Grid>
-        <Grid item xs={12}>
-          <SimpleCard></SimpleCard>
-        </Grid>
-      </Grid>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <Home></Home>
+          </Route>
+          <Route path='/event'>
+            <SimpleCard actionButtons={true}></SimpleCard>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

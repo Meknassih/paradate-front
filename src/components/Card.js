@@ -33,8 +33,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SimpleCard() {
+export default function SimpleCard(props) {
   const classes = useStyles();
+  let actionButtons;
+
+  if (props.actionButtons)
+    actionButtons = CardActionButtons();
 
   return (
     <Card className={classes.card}>
@@ -44,10 +48,7 @@ export default function SimpleCard() {
         </Typography>
         <Link
           className={classes.eventTitle}
-          component="button"
-          onClick={() => {
-
-          }}>
+          href="/event/1">
           Dr. Touati
         </Link>
         <Typography className={classes.pos} color="textSecondary">
@@ -59,26 +60,35 @@ export default function SimpleCard() {
           {'"8374ED"'}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button
-          color="primary"
-          className={classes.button}
-          startIcon={<EditOutlined />}
-          size="small"
-        >Modifier</Button>
-        <Button
-          color="primary"
-          className={classes.button}
-          startIcon={<ShareOutlined />}
-          size="small"
-        >Partager</Button>
-        <Button
-          color="secondary"
-          className={classes.button}
-          startIcon={<DeleteIcon />}
-          size="small"
-        >Supprimer</Button>
-      </CardActions>
+      {actionButtons}
     </Card>
+  );
+}
+
+
+function CardActionButtons() {
+  const classes = useStyles();
+
+  return (
+    <CardActions>
+      <Button
+        color="primary"
+        className={classes.button}
+        startIcon={<EditOutlined />}
+        size="small"
+      >Modifier</Button>
+      <Button
+        color="primary"
+        className={classes.button}
+        startIcon={<ShareOutlined />}
+        size="small"
+      >Partager</Button>
+      <Button
+        color="secondary"
+        className={classes.button}
+        startIcon={<DeleteIcon />}
+        size="small"
+      >Supprimer</Button>
+    </CardActions>
   );
 }
