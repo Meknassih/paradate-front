@@ -6,7 +6,7 @@ const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-around',
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -34,3 +34,34 @@ export default function DatePicker() {
   );
 }
 
+export function BoundaryDatePicker(props) {
+  const classes = useStyles();
+
+  return (
+    <form className={classes.container} noValidate>
+      <TextField
+        id="date"
+        label={props.dateLabel}
+        type="date"
+        defaultValue="2017-05-24"
+        className={classes.textField}
+        InputLabelProps={{
+          shrink: true,
+        }}
+      />
+      <TextField
+        id="time"
+        label={props.timeLabel}
+        type="time"
+        defaultValue="07:30"
+        className={classes.textField}
+        InputLabelProps={{
+          shrink: true,
+        }}
+        inputProps={{
+          step: 300, // 5 min
+        }}
+      />
+    </form>
+  );
+}

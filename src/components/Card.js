@@ -13,6 +13,8 @@ import { Link, Box } from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
   card: {
     minWidth: 275,
+    maxWidth: 780,
+    margin: '0 auto'
   },
   bullet: {
     display: 'inline-block',

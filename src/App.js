@@ -12,6 +12,7 @@ import EventDetail from './components/EventDetail';
 import LoginCard from './components/Login';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import EventCreation from './components/EventCreation';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -44,7 +45,7 @@ function App() {
   return (
     <div className={classes.root}>
       <header className={classes.header}>
-        <ButtonAppBar user={{ name: 'mEkNa' }}></ButtonAppBar>
+        <ButtonAppBar user={{ name: 'Mekna' }}></ButtonAppBar> {/* Insert variable user here*/}
       </header>
 
       <Router>
@@ -53,23 +54,28 @@ function App() {
             <Home></Home>
           </Route>
           <Route path='/event'>
-            <EventDetail></EventDetail>
+            <EventDetail />
           </Route>
           <Route path='/login'>
-            <LoginCard ></LoginCard>
+            <LoginCard />
+          </Route>
+          <Route path='/create'>
+            <EventCreation />
           </Route>
         </Switch>
       </Router>
-      <Fab
-        color="primary"
-        variant="extended"
-        aria-label="create"
-        className={classes.fab}
-        href="/create"
-      >
-        <AddIcon className={classes.extendedIcon} />
-        Nouveau
-      </Fab>
+      {true ? // Insert variable here
+        <Fab
+          color="primary"
+          variant="extended"
+          aria-label="create"
+          className={classes.fab}
+          href="/create"
+        >
+          <AddIcon className={classes.extendedIcon} />
+          Nouveau
+        </Fab>
+        : null}
     </div>
   );
 }

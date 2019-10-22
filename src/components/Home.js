@@ -11,13 +11,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     minHeight: '100vh'
   },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-    minHeight: 99
-  },
-  m2: {
+  grid: {
     padding: theme.spacing(4)
   }
 }));
@@ -26,10 +20,10 @@ export default function Home() {
   const classes = useStyles();
 
   return (
-    <Grid container spacing={3} className={classes.m2}>
+    <Grid container spacing={3} className={classes.grid}>
       <Grid item xs={12} md={6}>
         <Box>
-          <DatePicker className={classes.datePickerFilter}></DatePicker>
+          <DatePicker></DatePicker>
         </Box>
       </Grid>
       <Grid item xs={12} md={6}>
