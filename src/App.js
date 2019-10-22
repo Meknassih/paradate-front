@@ -41,11 +41,12 @@ const useStyles = makeStyles(theme => ({
 
 function App() {
   const classes = useStyles();
+  // const userFromDb = { name: 'Mekna' };
 
   return (
     <div className={classes.root}>
       <header className={classes.header}>
-        <ButtonAppBar user={{ name: 'Mekna' }}></ButtonAppBar> {/* Insert variable user here*/}
+        <ButtonAppBar user={undefined}></ButtonAppBar> {/* Insert variable user here*/}
       </header>
 
       <Router>

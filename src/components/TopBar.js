@@ -23,6 +23,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function ButtonAppBar(props) {
   const classes = useStyles();
+  const username = props.user ? props.user.name : undefined;
 
   return (
     <div className={classes.root}>
@@ -36,7 +37,7 @@ export default function ButtonAppBar(props) {
               Paradate
             </Link>
           </Typography>
-          <UserButton username={props.user.name}></UserButton>
+          <UserButton username={username}></UserButton>
         </Toolbar>
       </AppBar>
     </div>
