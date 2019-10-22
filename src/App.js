@@ -10,6 +10,8 @@ import {
 import Home from './components/Home';
 import EventDetail from './components/EventDetail';
 import LoginCard from './components/Login';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,7 +26,16 @@ const useStyles = makeStyles(theme => ({
   },
   m2: {
     padding: theme.spacing(4)
-  }
+  },
+  fab: {
+    margin: theme.spacing(1),
+    position: 'absolute',
+    right: 16,
+    bottom: 16
+  },
+  extendedIcon: {
+    marginRight: theme.spacing(1),
+  },
 }));
 
 function App() {
@@ -49,6 +60,16 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      <Fab
+        color="primary"
+        variant="extended"
+        aria-label="create"
+        className={classes.fab}
+        href="/create"
+      >
+        <AddIcon className={classes.extendedIcon} />
+        Nouveau
+      </Fab>
     </div>
   );
 }
