@@ -3,7 +3,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
 import SearchOutlined from '@material-ui/icons/SearchOutlined';
 
-export default function InputWithIcon() {
+export default function SearchInputWithIcon() {
   return (
     <div>
       <TextField

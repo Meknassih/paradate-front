@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import DatePicker from './DatePicker';
-import InputWithIcon from './SearchInput';
+import SearchInputWithIcon from './SearchInput';
 import SimpleCard from './Card';
 import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -34,7 +34,7 @@ export default function Home() {
       </Grid>
       <Grid item xs={12} md={6}>
         <Box>
-          <InputWithIcon></InputWithIcon>
+          <SearchInputWithIcon></SearchInputWithIcon>
         </Box>
       </Grid>
       <Grid item xs={12}>

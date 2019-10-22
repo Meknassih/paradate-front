@@ -8,8 +8,8 @@ import {
   Switch
 } from "react-router-dom";
 import Home from './components/Home';
-import SimpleCard from './components/Card';
 import EventDetail from './components/EventDetail';
+import LoginCard from './components/Login';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -43,6 +43,9 @@ function App() {
           </Route>
           <Route path='/event'>
             <EventDetail></EventDetail>
+          </Route>
+          <Route path='/login'>
+            <LoginCard ></LoginCard>
           </Route>
         </Switch>
       </Router>
