@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import VpnKeyOutlinedIcon from '@material-ui/icons/VpnKeyOutlined';
-import { Button, Box, TextField, InputAdornment } from '@material-ui/core';
+import { Button, TextField, InputAdornment } from '@material-ui/core';
 
 
 const useStyles = makeStyles(theme => ({
@@ -63,7 +63,7 @@ function LoginCard() {
         <Typography className={classes.description} color="textSecondary">
           Utilisez votre nom d'utilisateur et votre mot de passe pour consulter et modifier vos agendas.
         </Typography>
-        <Typography variant="body2" component="p">
+        <Typography variant="body2" component="div">
           <div className={classes.formRow}>
             <TextField
               id="input-with-icon-textfield"

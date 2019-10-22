@@ -33,7 +33,7 @@ function App() {
   return (
     <div className={classes.root}>
       <header className={classes.header}>
-        <ButtonAppBar></ButtonAppBar>
+        <ButtonAppBar user={{ name: 'mEkNa' }}></ButtonAppBar>
       </header>
 
       <Router>
