@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import SimpleCard from './Card';
+import EventCard from './Card';
 import { makeStyles } from '@material-ui/core/styles';
 import ArrowBackOutlinedIcon from '@material-ui/icons/ArrowBackOutlined';
 import { Button } from '@material-ui/core';
@@ -38,7 +38,7 @@ export default function EventDetail() {
       </Button>
       </Grid>
       <Grid item xs={12}>
-        <SimpleCard actionButtons={true}></SimpleCard>
+        <EventCard actionButtons={true}></EventCard>
       </Grid>
     </Grid>
   );

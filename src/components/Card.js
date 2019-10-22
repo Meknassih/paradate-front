@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function SimpleCard(props) {
+export default function EventCard(props) {
   const classes = useStyles();
   let actionButtons;
 
@@ -48,7 +48,7 @@ export default function SimpleCard(props) {
         </Typography>
         <CardTitle clickable={props.clickableTitle}></CardTitle>
         <Typography className={classes.pos} color="textSecondary">
-          10/10/2019
+          10/10/2019 10:15 - 10/10/2019 11:15
         </Typography>
         <Typography variant="body2" component="p">
           Ne pas oublier de ramener de l'espèce, impossible de payer par CB.
