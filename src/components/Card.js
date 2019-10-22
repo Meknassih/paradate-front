@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import DeleteIcon from '@material-ui/icons/DeleteOutline';
 import EditOutlined from '@material-ui/icons/EditOutlined';
 import ShareOutlined from '@material-ui/icons/ShareOutlined';
-import { Link } from '@material-ui/core';
+import { Link, Box } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -46,11 +46,7 @@ export default function SimpleCard(props) {
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           RDV
         </Typography>
-        <Link
-          className={classes.eventTitle}
-          href="/event/1">
-          Dr. Touati
-        </Link>
+        <CardTitle clickable={props.clickableTitle}></CardTitle>
         <Typography className={classes.pos} color="textSecondary">
           10/10/2019
         </Typography>
@@ -91,4 +87,22 @@ function CardActionButtons() {
       >Supprimer</Button>
     </CardActions>
   );
+}
+
+function CardTitle(props) {
+  const classes = useStyles();
+
+  if (props.clickable) {
+    return (
+      <Link className={classes.eventTitle} href="/event/1">
+        Dr. Touati
+      </Link>
+    );
+  } else {
+    return (
+      <Box className={classes.eventTitle}>
+        Dr. Touati
+        </Box>
+    );
+  }
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import DatePicker from './DatePicker';
-import InputWithIcon from './SearchInput';
 import SimpleCard from './Card';
-import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import ArrowBackOutlinedIcon from '@material-ui/icons/ArrowBackOutlined';
+import { Button } from '@material-ui/core';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,23 +22,23 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Home() {
+export default function EventDetail() {
   const classes = useStyles();
 
   return (
     <Grid container spacing={3} className={classes.m2}>
-      <Grid item xs={12} md={6}>
-        <Box>
-          <DatePicker className={classes.datePickerFilter}></DatePicker>
-        </Box>
-      </Grid>
-      <Grid item xs={12} md={6}>
-        <Box>
-          <InputWithIcon></InputWithIcon>
-        </Box>
+      <Grid item xs={12}>
+        <Button
+          size="large"
+          className={classes.button}
+          startIcon={<ArrowBackOutlinedIcon />}
+          href="/"
+        >
+          Retour
+      </Button>
       </Grid>
       <Grid item xs={12}>
-        <SimpleCard clickableTitle={true}></SimpleCard>
+        <SimpleCard actionButtons={true}></SimpleCard>
       </Grid>
     </Grid>
   );

@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home';
 import SimpleCard from './components/Card';
+import EventDetail from './components/EventDetail';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,7 +42,7 @@ function App() {
             <Home></Home>
           </Route>
           <Route path='/event'>
-            <SimpleCard actionButtons={true}></SimpleCard>
+            <EventDetail></EventDetail>
           </Route>
         </Switch>
       </Router>
